@@ -11,7 +11,7 @@ restarts.
 
 ## Image
 
-`ghcr.io/mano1233/claude-terminal:<VERSION>` (amd64 + arm64)
+`ghcr.io/mano1233/claude-terminal:<VERSION>` (arm64 only)
 
 | | |
 |---|---|
@@ -30,7 +30,7 @@ restarts.
 ## Run it locally
 
 ```bash
-docker run --rm -p 7681:7681 -e TTYD_CREDENTIAL=me:secret -v claude-home:/home/claude ghcr.io/mano1233/claude-terminal:latest
+docker run --rm --platform linux/arm64 -p 7681:7681 -e TTYD_CREDENTIAL=me:secret -v claude-home:/home/claude ghcr.io/mano1233/claude-terminal:latest
 ```
 
 Open http://localhost:7681, run `claude`, and log in once. Run `claude remote-control`
